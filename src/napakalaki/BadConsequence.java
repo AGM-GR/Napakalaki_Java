@@ -59,17 +59,11 @@ public class BadConsequence {
     
     public boolean isEmpty(){
         
-        if(text.length() == 0 && levels == 0 && 
+        return (text.length() == 0 && levels == 0 && 
                 nVisibleTreasures == 0 && 
                 nHiddenTreasures == 0 && 
                 specificVisibleTreasures.isEmpty() && 
-                specificHiddenTreasures.isEmpty())
-            
-            return true;
-        
-        else
-            
-            return false;
+                specificHiddenTreasures.isEmpty());
         
     }
     

@@ -28,102 +28,102 @@ public class CardDealer {
     }
     
     private void initTreasureCardDeck(){
-    
-            Treasure treasure = new Treasure("¡Sí, mi amo!", 0, 4 ,7, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Botas de investigación", 600, 3 ,4, TreasureKind.shoe);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Capucha de Cthulhu", 500, 3, 5, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("A prueba de babas", 400, 2, 5, TreasureKind.armor);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Botas de lluvia ácida", 800, 1, 1, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Casco minero", 400, 2, 4, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Ametralladora Thompson", 600, 4, 8, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Camiseta de la UGR", 100, 1, 7, TreasureKind.armor);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Clavo de raíl ferroviario", 400, 3, 6, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Cuchillo de sushi arcano", 300, 2, 3, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Fez alópodo", 700, 3, 5, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Hacha prehistórica", 500, 2, 5, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("El aparato del Pr. Tesla", 900, 4, 8, TreasureKind.armor);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Gaita", 500, 4, 5, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Insecticida", 300, 2, 3, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Escopeta de 3 cañones", 700, 4, 6, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Garabato místico", 300, 2, 2, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("La fuerza de Mr.T", 1000, 0, 0, TreasureKind.necklace);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("La rebeca metálica", 400, 2, 3, TreasureKind.armor);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Mazo de los antiguos", 200, 3, 4, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Necroplayboycón", 300, 3, 5, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Lanzallamas", 800, 4, 8, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Necrocomicón", 100, 1, 1, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Necronomicón", 800, 5, 7, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Linterna a 2 manos", 400, 3, 6, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Necrognomicón", 200, 2, 4, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Necrotelecom", 300, 2, 3, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Porra preternatural", 200, 2, 3, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Tentáculo de pega", 200, 0, 1, TreasureKind.helmet);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Zapato deja-amigos", 500, 0, 1, TreasureKind.shoe);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Shogulador", 600, 1, 1, TreasureKind.bothHand);
-            unusedTreasures.add(treasure);
-            
-            treasure = new Treasure("Varita de atizamiento", 400, 3, 4, TreasureKind.oneHand);
-            unusedTreasures.add(treasure);
+
+        Treasure treasure = new Treasure("¡Sí, mi amo!", 0, 4 ,7, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Botas de investigación", 600, 3 ,4, TreasureKind.shoe);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Capucha de Cthulhu", 500, 3, 5, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("A prueba de babas", 400, 2, 5, TreasureKind.armor);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Botas de lluvia ácida", 800, 1, 1, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Casco minero", 400, 2, 4, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Ametralladora Thompson", 600, 4, 8, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Camiseta de la UGR", 100, 1, 7, TreasureKind.armor);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Clavo de raíl ferroviario", 400, 3, 6, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Cuchillo de sushi arcano", 300, 2, 3, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Fez alópodo", 700, 3, 5, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Hacha prehistórica", 500, 2, 5, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("El aparato del Pr. Tesla", 900, 4, 8, TreasureKind.armor);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Gaita", 500, 4, 5, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Insecticida", 300, 2, 3, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Escopeta de 3 cañones", 700, 4, 6, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Garabato místico", 300, 2, 2, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("La fuerza de Mr.T", 1000, 0, 0, TreasureKind.necklace);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("La rebeca metálica", 400, 2, 3, TreasureKind.armor);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Mazo de los antiguos", 200, 3, 4, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Necroplayboycón", 300, 3, 5, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Lanzallamas", 800, 4, 8, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Necrocomicón", 100, 1, 1, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Necronomicón", 800, 5, 7, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Linterna a 2 manos", 400, 3, 6, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Necrognomicón", 200, 2, 4, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Necrotelecom", 300, 2, 3, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Porra preternatural", 200, 2, 3, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Tentáculo de pega", 200, 0, 1, TreasureKind.helmet);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Zapato deja-amigos", 500, 0, 1, TreasureKind.shoe);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Shogulador", 600, 1, 1, TreasureKind.bothHand);
+        unusedTreasures.add(treasure);
+
+        treasure = new Treasure("Varita de atizamiento", 400, 3, 4, TreasureKind.oneHand);
+        unusedTreasures.add(treasure);
         
     }
     
@@ -282,6 +282,9 @@ public class CardDealer {
     
     public void initCards(){
     
+        initTreasureCardDeck();
+        initMonsterCardDeck();
+        
     }
     
 }

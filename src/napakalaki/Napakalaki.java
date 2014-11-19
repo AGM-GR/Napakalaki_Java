@@ -63,19 +63,30 @@ public class Napakalaki {
     /*public CombatResult developCombat(){
         
         
-    }
+    }*/
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         
+        for (int i = 0; i<treasures.size(); i++){
         
+            currentPlayer.discardVisibleTreasure(treasures.get(i));
+            dealer.giveTreasureBack(treasures.get(i));
+            
+        }
+            
     }
     
-    public void discardHiddenTreasures(ArrayList<Treasure> treasures){
+    public void discardHiddenTreasures(ArrayList<Treasure> treasures){   
         
+        for (int i = 0; i<treasures.size(); i++){
         
+            currentPlayer.discardHiddenTreasure(treasures.get(i));
+            dealer.giveTreasureBack(treasures.get(i));
+            
+        }
     }
     
-    public void makeTreasuresVisible(ArrayList<Treasure> treasures){
+    /*public void makeTreasuresVisible(ArrayList<Treasure> treasures){
         
         
     }
@@ -83,12 +94,14 @@ public class Napakalaki {
     public boolean buyLevels(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
         
         
-    }
+    }*/
     
     public void initGame(ArrayList<String> nam){
         
-        
-    }*/
+        dealer.initCards();
+        initPlayers(nam);
+        nextTurn();
+    }
     
     public Player getCurrentPlayer(){
        
@@ -100,20 +113,30 @@ public class Napakalaki {
         return currentMonster;
     }
     
-    /*public boolean nextTurn(){
+    public boolean nextTurn(){
         
+        if (nextTurnAllowed()){
+            
+            nextPlayer();
+            
+            currentMonster = dealer.nextMonster();
+            
+            if (currentPlayer.isDead())
+                
+                currentPlayer.initTreasures();
+            
+            return true;
+        }
         
-    }*/
+        else
+            
+            return false;
+        
+    }
     
     public boolean endOfGame(CombatResult cr){
         
-        if (cr == CombatResult.WinAndWinGame)
-            
-            return true;
-        
-        else 
-            
-            return false;
+        return (cr == CombatResult.WinAndWinGame);
         
     }
  

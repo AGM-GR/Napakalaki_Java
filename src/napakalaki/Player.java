@@ -128,10 +128,10 @@ public class Player {
         
     }
     
-    private int computeGoldCoinsValue (ArrayList<Treasure> trs){
+    private float computeGoldCoinsValue (ArrayList<Treasure> trs){
     
-        int gold = 0;
-        int lvls = 0;
+        float gold = 0;
+        float lvls = 0;
         
         for (int i = 0; i<trs.size(); i++)
             
@@ -145,13 +145,7 @@ public class Player {
     
     private boolean canIBuyLevels(int l){
     
-        if (level+l < 10)
-            
-            return true;
-        
-        else
-            
-            return false;
+        return (level+l < 10);
         
     }
     
@@ -242,11 +236,23 @@ public class Player {
         
         visibleTreasures.remove(t);
         
+        if (pendingbadConsequence != null && !pendingbadConsequence.isEmpty())
+            
+            pendingbadConsequence.substractVisibleTreasure(t);
+        
+        dieIfNoTreasures();
+        
     }
     
     public void discardHiddenTreasure(Treasure t){
         
         hiddenTreasures.remove(t);
+        
+        if (pendingbadConsequence != null && !pendingbadConsequence.isEmpty())
+            
+            pendingbadConsequence.substractHiddenTreasure(t);
+        
+        dieIfNoTreasures();
         
     }
     
@@ -257,28 +263,20 @@ public class Player {
     */
     public boolean validState(){
         
-        if(pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4)
-            
-            return true;
-        
-        else
-            return false;
+        return (pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4);
     
     }
-    /*
+    
     public void initTreasures(){
-    
+        
+        
+        
     }
-    */
+    
     public boolean hasVisibleTreasures(){
     
-        if(visibleTreasures.size() > 0)
-            
-            return true;
-        
-        else
-            
-            return false;
+        return (visibleTreasures.size() > 0);
+
     }
     
     public int getLevels(){
