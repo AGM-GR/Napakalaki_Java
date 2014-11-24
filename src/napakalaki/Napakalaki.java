@@ -10,7 +10,7 @@ import java.util.Random;
 
 /**
  *
- * @author jaleon
+ * @author
  */
 public class Napakalaki {
     
@@ -60,10 +60,17 @@ public class Napakalaki {
         return currentPlayer.validState();
     }
     
-    /*public CombatResult developCombat(){
+    public CombatResult developCombat(){
+    
+        CombatResult result;
         
+        result = currentPlayer.combat(currentMonster);
         
-    }*/
+        dealer.giveMonsterBack(currentMonster);
+        
+        return result;
+        
+    }
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         
@@ -86,15 +93,18 @@ public class Napakalaki {
         }
     }
     
-    /*public void makeTreasuresVisible(ArrayList<Treasure> treasures){
+    public void makeTreasuresVisible(ArrayList<Treasure> treasures){
         
+        for (int i = 0; i < treasures.size(); i++)
+            
+            currentPlayer.makeTreasureVisible(treasures.get(i));
         
     }
     
     public boolean buyLevels(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
         
-        
-    }*/
+        return currentPlayer.buyLevels(visible,hidden);
+    }
     
     public void initGame(ArrayList<String> nam){
         

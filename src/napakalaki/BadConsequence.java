@@ -126,6 +126,51 @@ public class BadConsequence {
         
     }
     
+    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
+        
+        ArrayList<TreasureKind> specificVisible = new ArrayList();
+        ArrayList<TreasureKind> specificHidden = new ArrayList();
+        
+        if (!specificVisibleTreasures.isEmpty())
+            
+            for (int i = 0; i < visible.size(); i++)
+                
+                for (int n = 0; n < specificVisibleTreasures.size(); n++)
+                
+                    if (visible.get(i).getType() == specificVisibleTreasures.get(n))
+                        
+                        specificVisible.add(visible.get(i).getType());
+        
+        if (!specificHiddenTreasures.isEmpty())
+            
+            for (int i = 0; i < hidden.size(); i++)
+                
+                for (int n = 0; n < specificHiddenTreasures.size(); n++)
+                
+                    if (hidden.get(i).getType() == specificHiddenTreasures.get(n))
+                        
+                        specificHidden.add(visible.get(i).getType());
+        
+        if (nVisibleTreasures > 0){
+            
+            for (int i = 0; i < visible.size() && i < nVisibleTreasures; i++)
+                
+                specificVisible.add(visible.get(i).getType());
+        }
+         
+        if (nHiddenTreasures > 0){
+            
+            for (int i = 0; i < hidden.size() && i < nHiddenTreasures; i++)
+                
+                specificHidden.add(hidden.get(i).getType());
+        }
+        
+        BadConsequence adjustBad = new BadConsequence(text, levels, specificVisible, specificHidden);
+        
+        return adjustBad;
+    }
+    
+    
     public String toString(){
     
         return "Text = " + text + " levels = "  + Integer.toString(levels) + " VisibleTreasures = "  + Integer.toString(nVisibleTreasures) + " HiddenTreasures = "  + Integer.toString(nHiddenTreasures) + " Death = "  + Boolean.toString(death);
