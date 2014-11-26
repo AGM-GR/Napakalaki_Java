@@ -1,6 +1,6 @@
 /*
 */
-package napakalaki;
+package NapakalakiGame;
 
 /**
  *
