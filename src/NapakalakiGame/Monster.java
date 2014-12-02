@@ -49,7 +49,7 @@ public class Monster {
     
     public String toString(){
     
-        return "Name = " + name + " Combatlevel = "  + Integer.toString(combatLevel);
+        return name + ", Nivel = "  + Integer.toString(combatLevel) + ", Mal rollo: " + BadCns.toString();
     }
     
     public int getLevelsGained(){

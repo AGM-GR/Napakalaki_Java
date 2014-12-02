@@ -4,7 +4,6 @@ package NapakalakiGame;
 
 /**
  *
- * @author alex
  */
 public enum CombatResult {
     

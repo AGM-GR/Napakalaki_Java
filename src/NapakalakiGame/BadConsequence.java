@@ -59,11 +59,8 @@ public class BadConsequence {
     
     public boolean isEmpty(){
         
-        return (text.length() == 0 && levels == 0 && 
-                nVisibleTreasures == 0 && 
-                nHiddenTreasures == 0 && 
-                specificVisibleTreasures.isEmpty() && 
-                specificHiddenTreasures.isEmpty());
+        return (nVisibleTreasures == 0 && nHiddenTreasures == 0 
+                && specificVisibleTreasures.isEmpty() && specificHiddenTreasures.isEmpty());
         
     }
     
@@ -104,25 +101,13 @@ public class BadConsequence {
     
     public void substractVisibleTreasure(Treasure trs){
         
-        if (!specificVisibleTreasures.isEmpty())
-            
-            specificVisibleTreasures.remove(trs.getType());
-        
-        else if (nVisibleTreasures != 0)
-            
-            nVisibleTreasures--;
+        specificVisibleTreasures.remove(trs.getType());
         
     }
     
     public void substractHiddenTreasure(Treasure trs){
         
-        if (!specificHiddenTreasures.isEmpty())
-            
-            specificHiddenTreasures.remove(trs.getType());
-        
-        else if (nHiddenTreasures != 0)
-            
-            nHiddenTreasures--;
+        specificHiddenTreasures.remove(trs.getType());
         
     }
     
@@ -130,26 +115,41 @@ public class BadConsequence {
         
         ArrayList<TreasureKind> specificVisible = new ArrayList();
         ArrayList<TreasureKind> specificHidden = new ArrayList();
+        boolean encontrado = false;
         
-        if (!specificVisibleTreasures.isEmpty())
+        if (!(specificVisibleTreasures == null) || !specificVisibleTreasures.isEmpty())
             
-            for (int i = 0; i < visible.size(); i++)
+            for (int n = 0; n < specificVisibleTreasures.size(); n++){
                 
-                for (int n = 0; n < specificVisibleTreasures.size(); n++)
+                encontrado = false;
                 
-                    if (visible.get(i).getType() == specificVisibleTreasures.get(n))
+                for (int i = 0; i < visible.size() && !encontrado; i++)
+                
+                    if (visible.get(i).getType() == specificVisibleTreasures.get(n)){
                         
                         specificVisible.add(visible.get(i).getType());
+                        
+                        encontrado = true;
+                    }
+            }
         
-        if (!specificHiddenTreasures.isEmpty())
+        encontrado = false;
+        
+        if (!(specificHiddenTreasures == null) || !specificHiddenTreasures.isEmpty())
             
-            for (int i = 0; i < hidden.size(); i++)
+            for (int n = 0; n < specificHiddenTreasures.size(); n++){
                 
-                for (int n = 0; n < specificHiddenTreasures.size(); n++)
+                encontrado = false;
                 
-                    if (hidden.get(i).getType() == specificHiddenTreasures.get(n))
+                for (int i = 0; i < hidden.size() && !encontrado; i++)
+
+                    if (hidden.get(i).getType() == specificHiddenTreasures.get(n)){
                         
                         specificHidden.add(visible.get(i).getType());
+                        
+                        encontrado = true;
+                    }
+            }
         
         if (nVisibleTreasures > 0){
             
@@ -165,7 +165,7 @@ public class BadConsequence {
                 specificHidden.add(hidden.get(i).getType());
         }
         
-        BadConsequence adjustBad = new BadConsequence(text, levels, specificVisible, specificHidden);
+        BadConsequence adjustBad = new BadConsequence(text, 0, specificVisible, specificHidden);
         
         return adjustBad;
     }
@@ -173,7 +173,7 @@ public class BadConsequence {
     
     public String toString(){
     
-        return "Text = " + text + " levels = "  + Integer.toString(levels) + " VisibleTreasures = "  + Integer.toString(nVisibleTreasures) + " HiddenTreasures = "  + Integer.toString(nHiddenTreasures) + " Death = "  + Boolean.toString(death);
+        return text;
     }
     
 }

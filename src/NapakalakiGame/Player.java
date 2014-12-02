@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package NapakalakiGame;
 
@@ -9,7 +6,6 @@ import java.util.ArrayList;
 
 /**
  *
- * @author alex
  */
 public class Player {
     
@@ -17,13 +13,18 @@ public class Player {
     private boolean dead = true;
     private int level;
     private BadConsequence pendingbadConsequence;
-    private ArrayList<Treasure> visibleTreasures;
-    private ArrayList<Treasure> hiddenTreasures;
+    private ArrayList<Treasure> visibleTreasures = new ArrayList();
+    private ArrayList<Treasure> hiddenTreasures = new ArrayList();
 
     public Player(String nam){
 
         name = nam;
         level = 1;
+    }
+    
+    public String getName(){
+        
+        return name;
     }
     
     private void bringToLife(){
@@ -58,11 +59,11 @@ public class Player {
         return lvl;
     }
     
-    private void incrementLevels(int l){
+    private void incrementLevels(int levels){
     
-        if (level+l < 10)
+        if (level+levels < 10)
             
-            level += l;
+            level += levels;
         
         else
             
@@ -82,18 +83,7 @@ public class Player {
     
     private void setPendingBadConsequence(BadConsequence bc){
         
-        if (bc.getDeath())
-            
-            pendingbadConsequence = new BadConsequence (bc.getText(),true);
-        
-        else if (bc.getnHiddenTreasures()!= 0 || bc.getnVisibleTreasures() != 0)
-            
-            pendingbadConsequence = new BadConsequence (bc.getText(),bc.getLevels(),bc.getnVisibleTreasures(),bc.getnHiddenTreasures());
-        
-        else if (!bc.getSpecificHiddenTreasures().isEmpty() || !bc.getSpecificVisibleTreasures().isEmpty())
-            
-            pendingbadConsequence = new BadConsequence (bc.getText(), bc.getLevels(), bc.getSpecificVisibleTreasures(), bc.getSpecificHiddenTreasures());
-
+        pendingbadConsequence = bc;
     }
     
     private void dieIfNoTreasures(){
@@ -203,6 +193,8 @@ public class Player {
         
         setPendingBadConsequence(pendingBad);
         
+        
+        
     }
     
     private boolean canMakeTreasureVisible(Treasure treasure){
@@ -259,15 +251,16 @@ public class Player {
     
         return dead;
     }
-    /*
+    
     public ArrayList<Treasure> getVisibleTreasures(){
     
+        return visibleTreasures;
     }
     
     public ArrayList<Treasure> getHiddenTreasures(){
     
-    
-    }*/
+        return hiddenTreasures;
+    }
     
     public CombatResult combat(Monster m){
         
@@ -390,7 +383,21 @@ public class Player {
     
     public boolean validState(){
         
-        return (pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4);
+        if (pendingbadConsequence == null && hiddenTreasures.size() < 4)
+        
+            return true;
+        
+        else if (!(pendingbadConsequence == null && hiddenTreasures.size() < 4))
+                
+            return false;
+        
+        else if (pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4)
+            
+            return true;
+        
+        else
+            
+            return false;
     
     }
     
@@ -434,4 +441,8 @@ public class Player {
         return level;
     }
     
+    public String toString(){
+    
+        return name + ", Nivel " + level;
+    }
 }

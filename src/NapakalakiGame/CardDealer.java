@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package NapakalakiGame;
 
@@ -14,10 +11,10 @@ public class CardDealer {
     
     private static final CardDealer instance = new CardDealer();
     
-    private ArrayList<Treasure> unusedTreasures;
-    private ArrayList<Treasure> usedTreasures;
-    private ArrayList<Monster> unusedMonsters;
-    private ArrayList<Monster> usedMonsters;
+    private ArrayList<Treasure> unusedTreasures = new ArrayList();
+    private ArrayList<Treasure> usedTreasures = new ArrayList();
+    private ArrayList<Monster> unusedMonsters = new ArrayList();
+    private ArrayList<Monster> usedMonsters = new ArrayList();
 
     
     private CardDealer() {
@@ -128,7 +125,7 @@ public class CardDealer {
     }
     
     private void initMonsterCardDeck(){
-    
+        
         BadConsequence badConsequence = new BadConsequence("Pierdes 5 niveles y 3 tesoros visibles", 5, 3, 0);
         Prize prize = new Prize(4,2);
         unusedMonsters.add(new Monster("El rey de rosa", 13, badConsequence, prize));
@@ -283,7 +280,9 @@ public class CardDealer {
     public void initCards(){
     
         initTreasureCardDeck();
+        //shuffleTreasures();
         initMonsterCardDeck();
+        //shuffleMonsters();
         
     }
     

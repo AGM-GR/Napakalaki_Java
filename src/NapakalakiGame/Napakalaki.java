@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package NapakalakiGame;
 
@@ -10,15 +7,14 @@ import java.util.Random;
 
 /**
  *
- * @author
+ *
  */
 public class Napakalaki {
     
     private static final Napakalaki instance = new Napakalaki();
     
-    private ArrayList<Player> players;
+    private ArrayList<Player> players = new ArrayList();
     private Player currentPlayer;
-    private CardDealer dealer = CardDealer.getInstance();
     private Monster currentMonster;
     private int indexCurrentPlayer = -1;
     
@@ -57,12 +53,20 @@ public class Napakalaki {
     
     private boolean nextTurnAllowed(){
         
-        return currentPlayer.validState();
+        if (currentPlayer == null)
+            
+            return true;
+        
+        else
+            
+            return currentPlayer.validState();
     }
     
     public CombatResult developCombat(){
     
         CombatResult result;
+        
+        CardDealer dealer = CardDealer.getInstance();
         
         result = currentPlayer.combat(currentMonster);
         
@@ -74,6 +78,8 @@ public class Napakalaki {
     
     public void discardVisibleTreasures(ArrayList<Treasure> treasures){
         
+        CardDealer dealer = CardDealer.getInstance();
+        
         for (int i = 0; i<treasures.size(); i++){
         
             currentPlayer.discardVisibleTreasure(treasures.get(i));
@@ -84,6 +90,8 @@ public class Napakalaki {
     }
     
     public void discardHiddenTreasures(ArrayList<Treasure> treasures){   
+        
+        CardDealer dealer = CardDealer.getInstance();
         
         for (int i = 0; i<treasures.size(); i++){
         
@@ -108,6 +116,8 @@ public class Napakalaki {
     
     public void initGame(ArrayList<String> nam){
         
+        CardDealer dealer = CardDealer.getInstance();
+        
         dealer.initCards();
         initPlayers(nam);
         nextTurn();
@@ -124,6 +134,8 @@ public class Napakalaki {
     }
     
     public boolean nextTurn(){
+        
+        CardDealer dealer = CardDealer.getInstance();
         
         if (nextTurnAllowed()){
             
