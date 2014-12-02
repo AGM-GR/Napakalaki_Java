@@ -192,8 +192,22 @@ public class Player {
         BadConsequence pendingBad = bad.adjustToFitTreasureList(visibleTreasures,hiddenTreasures);
         
         setPendingBadConsequence(pendingBad);
+
+        for(int i = 0; i<visibleTreasures.size() && !pendingbadConsequence.getSpecificVisibleTreasures().isEmpty(); i++)
+            
+            if (visibleTreasures.get(i).getType() == pendingbadConsequence.getSpecificVisibleTreasures().get(0)){
+                
+                discardVisibleTreasure(visibleTreasures.get(i));
+                i--;
+            }
         
-        
+        for(int i = 0; i<hiddenTreasures.size() && !pendingbadConsequence.getSpecificHiddenTreasures().isEmpty(); i++)
+            
+            if (hiddenTreasures.get(i).getType() == pendingbadConsequence.getSpecificHiddenTreasures().get(0)){
+                
+                discardHiddenTreasure(hiddenTreasures.get(i));
+                i--;
+            }
         
     }
     
@@ -383,16 +397,8 @@ public class Player {
     
     public boolean validState(){
         
-        if (pendingbadConsequence == null && hiddenTreasures.size() < 4)
+        if (pendingbadConsequence == null || pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4)
         
-            return true;
-        
-        else if (!(pendingbadConsequence == null && hiddenTreasures.size() < 4))
-                
-            return false;
-        
-        else if (pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4)
-            
             return true;
         
         else
@@ -445,4 +451,5 @@ public class Player {
     
         return name + ", Nivel " + level;
     }
+
 }

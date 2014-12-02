@@ -117,7 +117,7 @@ public class BadConsequence {
         ArrayList<TreasureKind> specificHidden = new ArrayList();
         boolean encontrado = false;
         
-        if (!(specificVisibleTreasures == null) || !specificVisibleTreasures.isEmpty())
+        if (!(specificVisibleTreasures == null) && !specificVisibleTreasures.isEmpty())
             
             for (int n = 0; n < specificVisibleTreasures.size(); n++){
                 
@@ -135,7 +135,7 @@ public class BadConsequence {
         
         encontrado = false;
         
-        if (!(specificHiddenTreasures == null) || !specificHiddenTreasures.isEmpty())
+        if (!(specificHiddenTreasures == null) && !specificHiddenTreasures.isEmpty())
             
             for (int n = 0; n < specificHiddenTreasures.size(); n++){
                 
@@ -153,14 +153,14 @@ public class BadConsequence {
         
         if (nVisibleTreasures > 0){
             
-            for (int i = 0; i < visible.size() && i < nVisibleTreasures; i++)
+            for (int i = 0; i < visible.size() && i <= nVisibleTreasures; i++)
                 
                 specificVisible.add(visible.get(i).getType());
         }
          
         if (nHiddenTreasures > 0){
             
-            for (int i = 0; i < hidden.size() && i < nHiddenTreasures; i++)
+            for (int i = 0; i < hidden.size() && i <= nHiddenTreasures; i++)
                 
                 specificHidden.add(hidden.get(i).getType());
         }

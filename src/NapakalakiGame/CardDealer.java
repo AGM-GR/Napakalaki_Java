@@ -282,7 +282,7 @@ public class CardDealer {
         initTreasureCardDeck();
         shuffleTreasures();
         initMonsterCardDeck();
-        shuffleMonsters();
+        //shuffleMonsters();
         
     }
     
