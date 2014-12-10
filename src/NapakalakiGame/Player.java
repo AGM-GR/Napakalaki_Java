@@ -280,6 +280,7 @@ public class Player {
         
         int myLevel = getCombatLevel();
         int monsterLevel = m.getCombatLevel();
+        CombatResult result;
         
         if (myLevel > monsterLevel) {
         
@@ -288,11 +289,11 @@ public class Player {
             
             if (getLevels() >= 10)
                 
-                return CombatResult.WinAndWinGame;
+                result = CombatResult.WinAndWinGame;
             
             else
                 
-                return CombatResult.Win;                
+                result = CombatResult.Win;                
             
         }
         
@@ -310,7 +311,7 @@ public class Player {
                     
                     die();
                     
-                    return CombatResult.LoseAndDie;
+                    result = CombatResult.LoseAndDie;
                     
                 }
                 
@@ -320,14 +321,18 @@ public class Player {
                     
                     applyBadConsequence(bad);
                     
-                    return CombatResult.Lose;
+                    result = CombatResult.Lose;
                 }
             }
             
             else
                 
-                return CombatResult.LoseAndEscape;
+                result = CombatResult.LoseAndEscape;
         }
+        
+        discardNecklaceIfVisible();
+        
+        return result;
     }
     
     public void makeTreasureVisible(Treasure t){

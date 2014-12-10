@@ -38,7 +38,7 @@ public class CardDealer {
         treasure = new Treasure("A prueba de babas", 400, 2, 5, TreasureKind.armor);
         unusedTreasures.add(treasure);
 
-        treasure = new Treasure("Botas de lluvia ácida", 800, 1, 1, TreasureKind.bothHand);
+        treasure = new Treasure("Botas de lluvia ácida", 800, 1, 1, TreasureKind.shoe);
         unusedTreasures.add(treasure);
 
         treasure = new Treasure("Casco minero", 400, 2, 4, TreasureKind.helmet);
@@ -282,7 +282,7 @@ public class CardDealer {
         initTreasureCardDeck();
         shuffleTreasures();
         initMonsterCardDeck();
-        //shuffleMonsters();
+        shuffleMonsters();
         
     }
     

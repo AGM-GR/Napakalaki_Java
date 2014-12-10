@@ -13,5 +13,4 @@ public enum TreasureKind {
     helmet,
     shoe,
     necklace;
-    
 }

@@ -52,4 +52,9 @@ public class Treasure {
     
         return name + ", Type = "  + Type + ", Max.Bonus = " + maxBonus + ", Min.Bonus = " + minBonus + ", Gold coins = "  + goldCoins;
     }
+    
+    public String TypetoString(){
+    
+        return "" + Type;
+    }
 }
