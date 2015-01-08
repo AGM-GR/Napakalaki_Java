@@ -113,6 +113,9 @@ public class BadConsequence {
     
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
         
+        ArrayList<Treasure> tvisible = new ArrayList(visible);
+        ArrayList<Treasure> thidden = new ArrayList(hidden);
+        
         ArrayList<TreasureKind> specificVisible = new ArrayList();
         ArrayList<TreasureKind> specificHidden = new ArrayList();
         boolean encontrado = false;
@@ -123,11 +126,11 @@ public class BadConsequence {
                 
                 encontrado = false;
                 
-                for (int i = 0; i < visible.size() && !encontrado; i++)
+                for (int i = 0; i < tvisible.size() && !encontrado; i++)
                 
-                    if (visible.get(i).getType() == specificVisibleTreasures.get(n)){
+                    if (tvisible.get(i).getType() == specificVisibleTreasures.get(n)){
                         
-                        specificVisible.add(visible.get(i).getType());
+                        specificVisible.add(tvisible.get(i).getType());
                         
                         encontrado = true;
                     }
@@ -141,11 +144,11 @@ public class BadConsequence {
                 
                 encontrado = false;
                 
-                for (int i = 0; i < hidden.size() && !encontrado; i++)
+                for (int i = 0; i < thidden.size() && !encontrado; i++)
 
-                    if (hidden.get(i).getType() == specificHiddenTreasures.get(n)){
+                    if (thidden.get(i).getType() == specificHiddenTreasures.get(n)){
                         
-                        specificHidden.add(visible.get(i).getType());
+                        specificHidden.add(thidden.get(i).getType());
                         
                         encontrado = true;
                     }

@@ -3,7 +3,6 @@ package NapakalakiGame;
 
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
-import Test.GameTester;
 import java.util.ArrayList;
 
 public class Main {
@@ -21,10 +20,5 @@ public class Main {
         napakalakiModel.initGame(names);
         napakalakiView.showView();
         
-        //GameTester test = GameTester.getInstance();
-
-        // Poner el numero de jugadores con el que se quiera probar
-        //test.play(napakalakiModel, 2); 
-              
     }
 }

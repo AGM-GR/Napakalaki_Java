@@ -107,7 +107,7 @@ public class Dice extends JDialog {
     });
 
     jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel1.setText("pincha sobre el dado para detenerlo");
+    jLabel1.setText("Pincha sobre el dado para detenerlo");
 
     jL_message2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jL_message2.setText("jLabel1");
@@ -124,7 +124,7 @@ public class Dice extends JDialog {
         .addComponent(jL_message2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
       .addGroup(layout.createSequentialGroup()
         .addGap(70, 70, 70)
-        .addComponent(jLabel1))
+        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
       .addGroup(layout.createSequentialGroup()
         .addGap(160, 160, 160)
         .addComponent(jL_dice, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))

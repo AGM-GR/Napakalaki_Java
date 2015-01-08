@@ -37,11 +37,11 @@ public class PrizeView extends javax.swing.JPanel {
 
         jLabel1.setText("Levels:");
 
-        levels.setText("jLabel2");
+        levels.setText(" ");
 
         jLabel3.setText("Treasures:");
 
-        treasures.setText("jLabel4");
+        treasures.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

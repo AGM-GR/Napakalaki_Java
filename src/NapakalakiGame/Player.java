@@ -301,7 +301,7 @@ public class Player {
             
             Dice dice = Dice.getInstance();
             
-            int escape = dice.nextNumber();
+            int escape = dice.nextNumber(name + ": Has perdido.", "Tira el dado para intentar escapar ileso");
             
             if (escape < 5) {
                 
@@ -402,10 +402,15 @@ public class Player {
     
     public boolean validState(){
         
-        if (pendingbadConsequence == null || pendingbadConsequence.isEmpty() && hiddenTreasures.size() < 4)
+        if (pendingbadConsequence == null || pendingbadConsequence.isEmpty())
+            
+            if (hiddenTreasures.size() < 4)
         
-            return true;
-        
+                return true;
+            
+            else
+                
+                return false;
         else
             
             return false;
@@ -424,7 +429,7 @@ public class Player {
         
         hiddenTreasures.add(trs);
         
-        int number = dice.nextNumber();
+        int number = dice.nextNumber(name + " :","Tira el dado para asignar nuevos tesoros");
         
         if (number > 1){
             
