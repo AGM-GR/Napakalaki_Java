@@ -152,15 +152,18 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
 
     private void aniadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aniadeActionPerformed
         
-        names.add (SetName.getText());
-        
-        numJugador++;
-        
-        TextPlayer.setText("Jugador "+ numJugador + ":");
-        
-        SetName.setText("");
-        
-        repaint();
+        if (SetName.getText().length() > 0) {
+            
+            names.add (SetName.getText());
+
+            numJugador++;
+
+            TextPlayer.setText("Jugador "+ numJugador + ":");
+
+            SetName.setText("");
+
+            repaint();
+        }
     }//GEN-LAST:event_aniadeActionPerformed
 
     public ArrayList<String> getNames(){
