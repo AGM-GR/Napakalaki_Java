@@ -25,6 +25,8 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         
         numJugador = 1;
         
+        PlayButton.setEnabled(false);
+        
         this.addWindowListener (new WindowAdapter() {
             
             @Override
@@ -49,37 +51,41 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     private void initComponents() {
 
         TextPlayer1 = new javax.swing.JLabel();
-        TextPlayer = new javax.swing.JLabel();
-        SetName = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         PlayButton = new javax.swing.JButton();
+        TextPlayer = new javax.swing.JLabel();
         CancelButton = new javax.swing.JButton();
+        SetName = new javax.swing.JTextField();
         aniade = new javax.swing.JButton();
+        errorlimit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Napakalaki");
+        setResizable(false);
 
         TextPlayer1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TextPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TextPlayer1.setText("NAPAKALAKI");
 
-        TextPlayer.setText("Jugador ");
-
-        SetName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SetNameActionPerformed(evt);
-            }
-        });
-
-        PlayButton.setText("Play");
+        PlayButton.setText("Jugar");
         PlayButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlayButtonActionPerformed(evt);
             }
         });
 
-        CancelButton.setText("Cancel");
+        TextPlayer.setText("Jugador ");
+
+        CancelButton.setText("Cancelar");
         CancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelButtonActionPerformed(evt);
+            }
+        });
+
+        SetName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SetNameActionPerformed(evt);
             }
         });
 
@@ -90,53 +96,75 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
             }
         });
 
+        errorlimit.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        errorlimit.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PlayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(TextPlayer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SetName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(aniade)
+                    .addComponent(CancelButton))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(errorlimit, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextPlayer)
+                    .addComponent(SetName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(aniade))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorlimit, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PlayButton)
+                    .addComponent(CancelButton))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(TextPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PlayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextPlayer))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SetName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(aniade)
-                        .addContainerGap(38, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CancelButton)
-                        .addGap(102, 102, 102))))
+                .addGap(260, 260, 260)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(TextPlayer1)
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextPlayer)
-                    .addComponent(SetName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aniade))
-                .addGap(114, 114, 114)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlayButton)
-                    .addComponent(CancelButton))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(94, 94, 94)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayButtonActionPerformed
 
-        if (names.size() > 0)
-            
-            this.dispose();
+        this.dispose();
 
     }//GEN-LAST:event_PlayButtonActionPerformed
 
@@ -152,7 +180,11 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
 
     private void aniadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aniadeActionPerformed
         
-        if (SetName.getText().length() > 0) {
+        if (SetName.getText().length() > 0 && SetName.getText().length() < 40) {
+            
+            PlayButton.setEnabled(true);
+            
+            errorlimit.setText("");
             
             names.add (SetName.getText());
 
@@ -161,9 +193,26 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
             TextPlayer.setText("Jugador "+ numJugador + ":");
 
             SetName.setText("");
-
-            repaint();
         }
+        
+        else {
+            
+            errorlimit.setText("Tamaño de nombre incorrecto");
+            
+            SetName.setText("");
+        }
+        
+        if (numJugador == 4){
+            
+            aniade.setEnabled(false);
+            
+            SetName.setEnabled(false);
+            
+            TextPlayer.setText("Max.Jugadores");
+            
+        }
+        
+        repaint();
     }//GEN-LAST:event_aniadeActionPerformed
 
     public ArrayList<String> getNames(){
@@ -179,5 +228,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     private javax.swing.JLabel TextPlayer;
     private javax.swing.JLabel TextPlayer1;
     private javax.swing.JButton aniade;
+    private javax.swing.JLabel errorlimit;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

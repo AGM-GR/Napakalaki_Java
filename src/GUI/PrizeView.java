@@ -35,11 +35,11 @@ public class PrizeView extends javax.swing.JPanel {
 
         jLabel5.setText("jLabel5");
 
-        jLabel1.setText("Levels:");
+        jLabel1.setText("Niveles:");
 
         levels.setText(" ");
 
-        jLabel3.setText("Treasures:");
+        jLabel3.setText("Tesoros:");
 
         treasures.setText(" ");
 
@@ -57,7 +57,7 @@ public class PrizeView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(levels)
                             .addComponent(treasures))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

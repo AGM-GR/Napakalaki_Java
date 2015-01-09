@@ -57,33 +57,33 @@ public class PlayerView extends javax.swing.JPanel {
 
         jButton4.setText("jButton4");
 
-        jLabel1.setText("Name:");
+        jLabel1.setText("Jugador:");
 
         name.setText(" ");
 
-        jLabel3.setText("Level:");
+        jLabel3.setText("Nivel:");
 
         level.setText(" ");
 
-        jLabel5.setText("Visible Treasures:");
+        jLabel5.setText("Tesoros visibles:");
 
-        jLabel7.setText("Hidden Treasures:");
+        jLabel7.setText("Tesoros ocultos:");
 
-        BuyLevels.setText("Buy Levels");
+        BuyLevels.setText("Comprar niveles");
         BuyLevels.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuyLevelsActionPerformed(evt);
             }
         });
 
-        MakeVisible.setText("Make Visible");
+        MakeVisible.setText("Equipar");
         MakeVisible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MakeVisibleActionPerformed(evt);
             }
         });
 
-        DiscardTreasures.setText("Discard Treasures");
+        DiscardTreasures.setText("Descartar tesoros");
         DiscardTreasures.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DiscardTreasuresActionPerformed(evt);
@@ -102,29 +102,29 @@ public class PlayerView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BuyLevels)
-                        .addGap(18, 18, 18)
-                        .addComponent(MakeVisible)
-                        .addGap(18, 18, 18)
-                        .addComponent(DiscardTreasures))
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(level)
-                            .addComponent(name)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ScrollVisible, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(BuyLevels)
+                            .addGap(18, 18, 18)
+                            .addComponent(MakeVisible)
+                            .addGap(18, 18, 18)
+                            .addComponent(DiscardTreasures))
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel3)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(level))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(97, 97, 97)
+                            .addComponent(jLabel7))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(ScrollVisible, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(

@@ -59,25 +59,25 @@ public class TreasureView extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel1.setText("Name:");
+        jLabel1.setText("Nombre:");
 
         name.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         name.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel3.setText("Treasure Kind:");
+        jLabel3.setText("Tipo:");
 
         treasurekind.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         treasurekind.setText(" ");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel5.setText("Gold Coins:");
+        jLabel5.setText("Valor:");
 
         goldcoins.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         goldcoins.setText(" ");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel7.setText("Min.Bonus:");
+        jLabel7.setText("Mín.Bonus:");
 
         minbonus.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         minbonus.setText(" ");

@@ -34,7 +34,7 @@ public class BadConsequence {
         text = tex;
         death = dth;
         nVisibleTreasures = 0;
-        nHiddenTreasures = 0;        
+        nHiddenTreasures = 0;     
         
     }
     
@@ -102,13 +102,11 @@ public class BadConsequence {
     public void substractVisibleTreasure(Treasure trs){
         
         specificVisibleTreasures.remove(trs.getType());
-        
     }
     
     public void substractHiddenTreasure(Treasure trs){
         
         specificHiddenTreasures.remove(trs.getType());
-        
     }
     
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> visible, ArrayList<Treasure> hidden){
@@ -120,7 +118,7 @@ public class BadConsequence {
         ArrayList<TreasureKind> specificHidden = new ArrayList();
         boolean encontrado = false;
         
-        if (!(specificVisibleTreasures == null) && !specificVisibleTreasures.isEmpty())
+        if (!(specificVisibleTreasures == null) && !specificVisibleTreasures.isEmpty()) {
             
             for (int n = 0; n < specificVisibleTreasures.size(); n++){
                 
@@ -132,13 +130,16 @@ public class BadConsequence {
                         
                         specificVisible.add(tvisible.get(i).getType());
                         
+                        tvisible.remove(i);
+                        
                         encontrado = true;
                     }
             }
         
-        encontrado = false;
+            encontrado = false;
+        }
         
-        if (!(specificHiddenTreasures == null) && !specificHiddenTreasures.isEmpty())
+        if (!(specificHiddenTreasures == null) && !specificHiddenTreasures.isEmpty()) {
             
             for (int n = 0; n < specificHiddenTreasures.size(); n++){
                 
@@ -150,9 +151,12 @@ public class BadConsequence {
                         
                         specificHidden.add(thidden.get(i).getType());
                         
+                        thidden.remove(i);
+                        
                         encontrado = true;
                     }
             }
+        }
         
         if (nVisibleTreasures > 0){
             
