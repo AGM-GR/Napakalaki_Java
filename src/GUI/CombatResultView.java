@@ -61,6 +61,8 @@ public class CombatResultView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Napakalaki");
+        setMaximumSize(new java.awt.Dimension(510, 300));
+        setMinimumSize(new java.awt.Dimension(510, 300));
 
         cResult.setFont(new java.awt.Font("Harrington", 3, 36)); // NOI18N
         cResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,12 +85,12 @@ public class CombatResultView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(cResult, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addComponent(cResult, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(OK)

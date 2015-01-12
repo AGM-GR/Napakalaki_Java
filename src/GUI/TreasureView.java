@@ -6,6 +6,7 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
+import NapakalakiGame.TreasureKind;
 
 /**
  *
@@ -59,33 +60,43 @@ public class TreasureView extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Nombre:");
 
         name.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        name.setForeground(new java.awt.Color(204, 204, 204));
         name.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Tipo:");
 
         treasurekind.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        treasurekind.setForeground(new java.awt.Color(204, 204, 204));
         treasurekind.setText(" ");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Valor:");
 
         goldcoins.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        goldcoins.setForeground(new java.awt.Color(204, 204, 204));
         goldcoins.setText(" ");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Mín.Bonus:");
 
         minbonus.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        minbonus.setForeground(new java.awt.Color(204, 204, 204));
         minbonus.setText(" ");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Max.Bonus:");
 
         maxbonus.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        maxbonus.setForeground(new java.awt.Color(204, 204, 204));
         maxbonus.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -107,10 +118,10 @@ public class TreasureView extends javax.swing.JPanel {
                             .addComponent(minbonus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(treasurekind, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel3))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addContainerGap())
+                            .addComponent(treasurekind, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -120,15 +131,16 @@ public class TreasureView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(goldcoins)
-                    .addComponent(treasurekind))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(name)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(goldcoins))
+                    .addComponent(treasurekind, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -174,6 +186,32 @@ public class TreasureView extends javax.swing.JPanel {
         goldcoins.setText(Integer.toString(treasureModel.getGoldCoins()));
         minbonus.setText(Integer.toString(treasureModel.getMinBonus()));
         maxbonus.setText(Integer.toString(treasureModel.getMaxBonus()));
+        
+        TreasureKind englishtreasure = treasureModel.getType();
+        
+        if(englishtreasure == TreasureKind.armor)
+            
+            treasurekind.setText("Armadura");
+        
+        else if(englishtreasure == TreasureKind.bothHand)
+            
+            treasurekind.setText("Dos manos");
+        
+        else if(englishtreasure == TreasureKind.helmet)
+            
+            treasurekind.setText("Casco");
+        
+        else if(englishtreasure == TreasureKind.necklace)
+            
+            treasurekind.setText("Collar");
+        
+        else if(englishtreasure == TreasureKind.oneHand)
+            
+            treasurekind.setText("Una mano");
+        
+        else
+            
+            treasurekind.setText("Calzado");
         
         repaint();
     }

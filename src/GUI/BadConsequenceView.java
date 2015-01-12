@@ -21,6 +21,9 @@ public class BadConsequenceView extends javax.swing.JPanel {
     
     public BadConsequenceView() {
         initComponents();
+        
+        ScrollText.getViewport().setOpaque(false);
+        //text.setOpaque(false);
     }
 
     /**
@@ -34,26 +37,45 @@ public class BadConsequenceView extends javax.swing.JPanel {
 
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        text = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         dead = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         levels = new javax.swing.JLabel();
+        ScrollText = new javax.swing.JScrollPane();
+        text = new javax.swing.JTextArea();
 
         jLabel13.setText("jLabel13");
 
         jLabel14.setText("jLabel14");
 
-        text.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        text.setMaximumSize(new java.awt.Dimension(361, 40));
-
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("¿Mueres?");
 
+        dead.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        dead.setForeground(new java.awt.Color(204, 204, 204));
         dead.setText(" ");
 
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Niveles perdidos:");
 
+        levels.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        levels.setForeground(new java.awt.Color(204, 204, 204));
         levels.setText(" ");
+
+        ScrollText.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ScrollText.setOpaque(false);
+
+        text.setColumns(20);
+        text.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        text.setForeground(new java.awt.Color(204, 204, 204));
+        text.setLineWrap(true);
+        text.setRows(5);
+        text.setBorder(null);
+        text.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        text.setOpaque(false);
+        ScrollText.setViewportView(text);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -66,21 +88,22 @@ public class BadConsequenceView extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(dead, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(levels, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(107, 107, 107))
-            .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(ScrollText, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(ScrollText, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel11))
@@ -94,19 +117,19 @@ public class BadConsequenceView extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrollText;
     private javax.swing.JLabel dead;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel levels;
-    private javax.swing.JLabel text;
+    private javax.swing.JTextArea text;
     // End of variables declaration//GEN-END:variables
     
     public void setBadConsequence (BadConsequence bc){
     
         badconsequenceModel = bc;
-        
         
         text.setText(badconsequenceModel.getText());
         levels.setText(Integer.toString(badconsequenceModel.getLevels()));

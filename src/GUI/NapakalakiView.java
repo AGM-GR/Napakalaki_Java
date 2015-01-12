@@ -42,6 +42,7 @@ public class NapakalakiView extends javax.swing.JFrame {
     
     
     public NapakalakiView() {
+        
         initComponents();
     }
 
@@ -54,29 +55,28 @@ public class NapakalakiView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        meet = new javax.swing.JButton();
-        combat = new javax.swing.JButton();
+        Game = new javax.swing.JPanel();
         next = new javax.swing.JButton();
-        error = new javax.swing.JLabel();
+        meet = new javax.swing.JButton();
         player = new GUI.PlayerView();
+        combat = new javax.swing.JButton();
         monster = new GUI.MonsterView();
+        error = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Napakalaki");
+        setMaximumSize(new java.awt.Dimension(900, 550));
+        setMinimumSize(new java.awt.Dimension(900, 550));
+        setPreferredSize(new java.awt.Dimension(900, 550));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        meet.setText("Conoce al monstruo");
-        meet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meetActionPerformed(evt);
-            }
-        });
-
-        combat.setText("¡Lucha!");
-        combat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combatActionPerformed(evt);
-            }
-        });
+        Game.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Game.setMaximumSize(new java.awt.Dimension(900, 520));
+        Game.setMinimumSize(new java.awt.Dimension(900, 520));
+        Game.setOpaque(false);
+        Game.setPreferredSize(new java.awt.Dimension(900, 520));
 
         next.setText("Siguiente turno");
         next.addActionListener(new java.awt.event.ActionListener() {
@@ -85,106 +85,133 @@ public class NapakalakiView extends javax.swing.JFrame {
             }
         });
 
+        meet.setText("Conoce al monstruo");
+        meet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meetActionPerformed(evt);
+            }
+        });
+
+        player.setMaximumSize(new java.awt.Dimension(392, 394));
+        player.setOpaque(false);
+
+        combat.setText("¡Lucha!");
+        combat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combatActionPerformed(evt);
+            }
+        });
+
+        monster.setMaximumSize(new java.awt.Dimension(405, 394));
+        monster.setMinimumSize(new java.awt.Dimension(405, 394));
+        monster.setOpaque(false);
+        monster.setPreferredSize(new java.awt.Dimension(405, 394));
+
         error.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         error.setForeground(new java.awt.Color(255, 0, 0));
+        error.setMaximumSize(new java.awt.Dimension(280, 21));
+        error.setMinimumSize(new java.awt.Dimension(280, 21));
+        error.setPreferredSize(new java.awt.Dimension(280, 21));
 
-        player.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        monster.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(meet)
-                .addGap(28, 28, 28)
-                .addComponent(combat)
-                .addGap(35, 35, 35)
-                .addComponent(next)
-                .addContainerGap(248, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(player, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+        javax.swing.GroupLayout GameLayout = new javax.swing.GroupLayout(Game);
+        Game.setLayout(GameLayout);
+        GameLayout.setHorizontalGroup(
+            GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GameLayout.createSequentialGroup()
+                .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GameLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(meet)
+                        .addGap(28, 28, 28)
+                        .addComponent(combat)
+                        .addGap(35, 35, 35)
+                        .addComponent(next)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GameLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(player, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(player, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(monster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(meet)
-                    .addComponent(combat)
-                    .addComponent(next))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+        GameLayout.setVerticalGroup(
+            GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GameLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(player, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(meet)
+                        .addComponent(combat)
+                        .addComponent(next))
+                    .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
+
+        getContentPane().add(Game);
+        Game.setBounds(0, 0, 900, 550);
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Libro.gif"))); // NOI18N
+        getContentPane().add(Fondo);
+        Fondo.setBounds(0, 0, 900, 550);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        
-        boolean allowed = false;
-        
-        allowed = napakalakiModel.nextTurn();
-        
-        if (!allowed) {
-            
-            error.setText("You shall not pass...");
-            repaint();
-        }
-        
-        else {
-            
-            monster.setVisible(false);
-            error.setText("");
-            setNapakalaki(napakalakiModel);
-        }
-        
-    }//GEN-LAST:event_nextActionPerformed
-
-    private void meetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meetActionPerformed
-        
-        monster.setVisible(true);
-        
-        player.setEnable(false);
-        combat.setEnabled(true);
-        
-        repaint();
-        
-    }//GEN-LAST:event_meetActionPerformed
-
     private void combatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combatActionPerformed
-        
+
         result = napakalakiModel.developCombat();
-        
+
         crView.setCombatResult(result);
         crView.showView();
-        
+
         setNapakalaki(napakalakiModel);
-        
+
         player.setEnable(true);
         next.setEnabled(true);
         combat.setEnabled(false);
         meet.setEnabled(false);
         monster.setVisible(true);
-        
+
         repaint();
     }//GEN-LAST:event_combatActionPerformed
+
+    private void meetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meetActionPerformed
+
+        monster.setVisible(true);
+
+        player.setEnable(false);
+        combat.setEnabled(true);
+
+        repaint();
+
+    }//GEN-LAST:event_meetActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+
+        boolean allowed = false;
+
+        allowed = napakalakiModel.nextTurn();
+
+        if (!allowed) {
+
+            error.setText("You shall not pass...");
+            repaint();
+        }
+
+        else {
+
+            monster.setVisible(false);
+            error.setText("");
+            setNapakalaki(napakalakiModel);
+        }
+
+    }//GEN-LAST:event_nextActionPerformed
 
     public void showView() {
         
@@ -199,6 +226,8 @@ public class NapakalakiView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JPanel Game;
     private javax.swing.JButton combat;
     private javax.swing.JLabel error;
     private javax.swing.JButton meet;

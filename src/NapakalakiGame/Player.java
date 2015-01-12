@@ -188,26 +188,34 @@ public class Player {
         BadConsequence pendingBad = bad.adjustToFitTreasureList(visibleTreasures,hiddenTreasures);
         
         setPendingBadConsequence(pendingBad);
-
-        while (!pendingbadConsequence.getSpecificVisibleTreasures().isEmpty())
+        
+        boolean encontrado;
+        
+        while (!pendingbadConsequence.getSpecificVisibleTreasures().isEmpty()) {
             
-            for(int i = 0; i<visibleTreasures.size(); i++)
+            encontrado = false;
+            
+            for(int i = 0; i<visibleTreasures.size() && !encontrado; i++)
                 
                 if (visibleTreasures.get(i).getType() == pendingbadConsequence.getSpecificVisibleTreasures().get(0)) {
 
                     discardVisibleTreasure(visibleTreasures.get(i));
-                    i--;
+                    encontrado = true;
                 }
+        }
         
-        while (!pendingbadConsequence.getSpecificHiddenTreasures().isEmpty())
+        while (!pendingbadConsequence.getSpecificHiddenTreasures().isEmpty()) {
             
-            for(int i = 0; i<hiddenTreasures.size(); i++)
+            encontrado = false;
+            
+            for(int i = 0; i<hiddenTreasures.size() && !encontrado; i++)
 
                 if (hiddenTreasures.get(i).getType() == pendingbadConsequence.getSpecificHiddenTreasures().get(0)) {
 
                     discardHiddenTreasure(hiddenTreasures.get(i));
-                    i--;
+                    encontrado = true;
                 }
+        }
     }
     
     private boolean canMakeTreasureVisible(Treasure treasure){
