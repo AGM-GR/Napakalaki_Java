@@ -8,13 +8,15 @@ public class Monster {
     
     private String name = new String();
     private int combatLevel;
+    private int levelChangeAgainstCultistPlayer;
     private BadConsequence BadCns;
     private Prize prz;
     
     public Monster(String nam, int level){      
         
         name = nam;
-        combatLevel = level;           
+        combatLevel = level;
+        levelChangeAgainstCultistPlayer = 0;
         
     }
     
@@ -24,6 +26,16 @@ public class Monster {
         combatLevel = level;
         BadCns = bc;
         prz = prize;
+        levelChangeAgainstCultistPlayer = 0;
+    }
+    
+    public Monster(String nam, int level, BadConsequence bc, Prize prize, int levelAgainstCultist){
+        
+        name = nam;
+        combatLevel = level;
+        BadCns = bc;
+        prz = prize;
+        levelChangeAgainstCultistPlayer = levelAgainstCultist;
     }
             
     public String getName(){
@@ -66,6 +78,11 @@ public class Monster {
     public boolean kills(){
     
         return BadCns.getDeath();
+    }
+    
+    public int getLevelChangeAgainstCultistPlayer() {
+    
+        return levelChangeAgainstCultistPlayer;
     }
     
 }

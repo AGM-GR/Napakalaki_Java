@@ -22,20 +22,35 @@ public class CombatResultView extends javax.swing.JFrame {
         
         switch(result){
             
-            case Lose: cResult.setText("Pierdes el combate");
-                       break;
+            case Lose:
                 
-            case LoseAndEscape: cResult.setText("Has logrado escapar");
-                                break;
+                cResult.setText("Pierdes el combate");
+                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSE.gif")));
+                break;
                 
-            case LoseAndDie: cResult.setText("Pierdes y mueres");
-                             break;
+            case LoseAndEscape: 
                 
-            case Win: cResult.setText("Ganas el combate");
-                      break;
+                cResult.setText("Has logrado escapar");
+                //Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSEANDESCAPE.gif")));
+                break;
+                
+            case LoseAndDie: 
+                
+                cResult.setText("Pierdes y mueres");
+                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSEANDDIE.gif")));
+                break;
+                
+            case Win: 
+                
+                cResult.setText("Ganas el combate");
+                //Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/WIN.gif")));
+                break;
                     
-            case WinAndWinGame: cResult.setText("Has ganado la partida");
-                                break;
+            case WinAndWinGame: 
+                
+                cResult.setText("Has ganado la partida");
+                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/WINANDWINGAME.gif")));
+                break;
             
         }
         
@@ -58,14 +73,19 @@ public class CombatResultView extends javax.swing.JFrame {
 
         cResult = new javax.swing.JLabel();
         OK = new javax.swing.JButton();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Napakalaki");
         setMaximumSize(new java.awt.Dimension(510, 300));
         setMinimumSize(new java.awt.Dimension(510, 300));
+        getContentPane().setLayout(null);
 
         cResult.setFont(new java.awt.Font("Harrington", 3, 36)); // NOI18N
+        cResult.setForeground(new java.awt.Color(204, 204, 204));
         cResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(cResult);
+        cResult.setBounds(30, 20, 442, 103);
 
         OK.setText("OK");
         OK.addActionListener(new java.awt.event.ActionListener() {
@@ -73,29 +93,14 @@ public class CombatResultView extends javax.swing.JFrame {
                 OKActionPerformed(evt);
             }
         });
+        getContentPane().add(OK);
+        OK.setBounds(200, 210, 107, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(OK, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(cResult, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addComponent(cResult, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(OK)
-                .addGap(34, 34, 34))
-        );
+        Background.setMaximumSize(new java.awt.Dimension(510, 300));
+        Background.setMinimumSize(new java.awt.Dimension(510, 300));
+        Background.setPreferredSize(new java.awt.Dimension(510, 300));
+        getContentPane().add(Background);
+        Background.setBounds(0, 0, 510, 300);
 
         pack();
         setLocationRelativeTo(null);
@@ -111,6 +116,7 @@ public class CombatResultView extends javax.swing.JFrame {
     }//GEN-LAST:event_OKActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Background;
     private javax.swing.JButton OK;
     private javax.swing.JLabel cResult;
     // End of variables declaration//GEN-END:variables

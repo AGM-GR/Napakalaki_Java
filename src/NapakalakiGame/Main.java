@@ -12,12 +12,12 @@ public class Main {
         Napakalaki napakalakiModel = Napakalaki.getInstance();
         NapakalakiView napakalakiView = new NapakalakiView();
         Dice.createInstance(napakalakiView);
-        napakalakiView.setNapakalaki(napakalakiModel);
       
         ArrayList<String> names = new ArrayList();
         PlayerNamesCapture namesCapture = new PlayerNamesCapture(napakalakiView,true);
         names = namesCapture.getNames();
         napakalakiModel.initGame(names);
+        napakalakiView.setNapakalaki(napakalakiModel);
         napakalakiView.showView();
         
     }

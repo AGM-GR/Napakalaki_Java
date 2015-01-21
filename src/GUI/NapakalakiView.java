@@ -109,9 +109,9 @@ public class NapakalakiView extends javax.swing.JFrame {
 
         error.setFont(new java.awt.Font("Lucida Calligraphy", 3, 14)); // NOI18N
         error.setForeground(new java.awt.Color(255, 0, 0));
-        error.setMaximumSize(new java.awt.Dimension(280, 21));
-        error.setMinimumSize(new java.awt.Dimension(280, 21));
-        error.setPreferredSize(new java.awt.Dimension(280, 21));
+        error.setMaximumSize(new java.awt.Dimension(215, 21));
+        error.setMinimumSize(new java.awt.Dimension(215, 21));
+        error.setPreferredSize(new java.awt.Dimension(215, 21));
 
         javax.swing.GroupLayout GameLayout = new javax.swing.GroupLayout(Game);
         Game.setLayout(GameLayout);
@@ -127,7 +127,8 @@ public class NapakalakiView extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(next)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
                     .addGroup(GameLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(player, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,7 +143,7 @@ public class NapakalakiView extends javax.swing.JFrame {
                 .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(player, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(meet)
@@ -217,7 +218,6 @@ public class NapakalakiView extends javax.swing.JFrame {
         
         this.setVisible(true);
         
-        setNapakalaki(napakalakiModel);
     }
     
     public CombatResult getCombatResult () {

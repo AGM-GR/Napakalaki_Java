@@ -11,6 +11,7 @@ public enum CombatResult {
     Win,
     Lose,
     LoseAndEscape,
-    LoseAndDie;
+    LoseAndDie,
+    LoseAndConvert;
     
 }
