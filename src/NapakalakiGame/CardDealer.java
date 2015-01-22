@@ -162,7 +162,7 @@ public class CardDealer {
         
         badConsequence = new BadConsequence("Toses los pulmones y pierdes 2 niveles.", 2, 0, 0);
         prize = new Prize(1,1);
-        unusedMonsters.add(new Monster("La que redacta en las tinieblas.", 2, badConsequence, prize));
+        unusedMonsters.add(new Monster("La que redacta en las tinieblas", 2, badConsequence, prize));
         
         badConsequence = new BadConsequence("Estos monstruos resultan bastante superficiales y te aburren mortalmente. Estás muerto.", true);
         prize = new Prize(2,1);

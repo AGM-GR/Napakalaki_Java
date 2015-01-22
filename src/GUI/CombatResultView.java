@@ -6,6 +6,8 @@
 package GUI;
 
 import NapakalakiGame.CombatResult;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class CombatResultView extends javax.swing.JFrame {
 
@@ -19,37 +21,49 @@ public class CombatResultView extends javax.swing.JFrame {
     public void setCombatResult(CombatResult cr) {
         
         result = cr;
+        ImageIcon icon = new ImageIcon();
+        Background.setIcon(null);
         
         switch(result){
             
             case Lose:
                 
                 cResult.setText("Pierdes el combate");
-                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSE.gif")));
+                icon = new ImageIcon(getClass().getResource("/Resources/LOSE.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
                 break;
                 
             case LoseAndEscape: 
                 
                 cResult.setText("Has logrado escapar");
-                //Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSEANDESCAPE.gif")));
+                //icon = new ImageIcon(getClass().getResource("/Resources/LOSEANDSECAPE.gif"));
+                //icon.getImage().flush();
+                //Background.setIcon(icon);
                 break;
                 
             case LoseAndDie: 
                 
                 cResult.setText("Pierdes y mueres");
-                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/LOSEANDDIE.gif")));
+                icon = new ImageIcon(getClass().getResource("/Resources/LOSEANDDIE.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
                 break;
                 
             case Win: 
                 
                 cResult.setText("Ganas el combate");
-                //Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/WIN.gif")));
+                //icon = new ImageIcon(getClass().getResource("/Resources/WIN.gif"));
+                //icon.getImage().flush();
+                //Background.setIcon(icon);
                 break;
                     
             case WinAndWinGame: 
                 
                 cResult.setText("Has ganado la partida");
-                Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/WINANDWINGAME.gif")));
+                icon = new ImageIcon(getClass().getResource("/Resources/WINANDWINGAME.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
                 break;
             
         }
@@ -81,7 +95,7 @@ public class CombatResultView extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(510, 300));
         getContentPane().setLayout(null);
 
-        cResult.setFont(new java.awt.Font("Harrington", 3, 36)); // NOI18N
+        cResult.setFont(new java.awt.Font("Harrington", 3, 34)); // NOI18N
         cResult.setForeground(new java.awt.Color(204, 204, 204));
         cResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(cResult);
@@ -94,7 +108,7 @@ public class CombatResultView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OK);
-        OK.setBounds(200, 210, 107, 23);
+        OK.setBounds(200, 210, 107, 29);
 
         Background.setMaximumSize(new java.awt.Dimension(510, 300));
         Background.setMinimumSize(new java.awt.Dimension(510, 300));

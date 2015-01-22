@@ -183,7 +183,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
 
     private void aniadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aniadeActionPerformed
         
-        if (SetName.getText().length() > 0 && SetName.getText().length() < 40) {
+        if (SetName.getText().length() > 0 && SetName.getText().length() < 25) {
             
             boolean repetido = false;
            

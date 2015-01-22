@@ -33,7 +33,7 @@ public class Player {
         
     }
     
-    private int getCombatLevel(){
+    public int getCombatLevel(){
     
         int lvl = level;
         boolean collarVisible = false;
