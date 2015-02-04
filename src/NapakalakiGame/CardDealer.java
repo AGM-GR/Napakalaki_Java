@@ -208,11 +208,23 @@ public class CardDealer {
     
     private void initCultistsCardDeck(){
         
-        ////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////
-        /////////////////////// RELLENAR ///////////////////////////////////
-        ////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////
+        Cultist cultist = new Cultist("Sectario", 1);
+        unusedCultists.add(cultist);
+        
+        cultist = new Cultist("Sectario", 2);
+        unusedCultists.add(cultist);
+        
+        cultist = new Cultist("Sectario", 1);
+        unusedCultists.add(cultist);
+        
+        cultist = new Cultist("Sectario", 2);
+        unusedCultists.add(cultist);
+        
+        cultist = new Cultist("Sectario", 1);
+        unusedCultists.add(cultist);
+        
+        cultist = new Cultist("Sectario", 1);
+        unusedCultists.add(cultist);
         
     }
     
