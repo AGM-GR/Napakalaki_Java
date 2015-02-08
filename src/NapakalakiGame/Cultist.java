@@ -5,7 +5,7 @@
  */
 package NapakalakiGame;
 
-public class Cultist {
+public class Cultist implements Card{
     
     private String name;
     private int gainedLevels;
@@ -24,5 +24,17 @@ public class Cultist {
     public int gainedLevels() {
         
         return gainedLevels;
+    }
+
+    @Override
+    public int getBasicValue() {
+        
+        return gainedLevels;
+    }
+
+    @Override
+    public int getSpecialValue() {
+        
+        return getBasicValue() * CultistPlayer.getTotalCultistPlayers();
     }
 }

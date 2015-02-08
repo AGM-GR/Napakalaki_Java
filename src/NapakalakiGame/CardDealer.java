@@ -204,6 +204,34 @@ public class CardDealer {
         prize = new Prize(1,1);
         unusedMonsters.add(new Monster("Bicéfalo", 20, badConsequence, prize));
         
+        badConsequence = new BadConsequence("Pierdes 1 mano visible.", 1, new ArrayList(Arrays.asList(TreasureKind.oneHand)), new ArrayList());
+        prize = new Prize(3,1);
+        unusedMonsters.add(new Monster("El mal indecible impronunciable", 10, badConsequence, prize, -2));
+        
+        badConsequence = new BadConsequence("Pierdes tus tesoros visibles. Jajaja.", 1, 10, 0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Testigos oculares", 6, badConsequence, prize, 2));
+        
+        badConsequence = new BadConsequence("Hoy no es tu día de suerte. Mueres.", true);
+        prize = new Prize(2,5);
+        unusedMonsters.add(new Monster("El gran cthulhu", 20, badConsequence, prize, 4));
+        
+        badConsequence = new BadConsequence("Tu gobierno te recorta 2 niveles.", 2, 0, 0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Serpiente Político", 8, badConsequence, prize, -2));
+        
+        badConsequence = new BadConsequence("Pierdes tu casco y tu armadura visible. Pierdes tus manos ocultas.", 1, new ArrayList(Arrays.asList(TreasureKind.helmet, TreasureKind.armor)), new ArrayList(Arrays.asList(TreasureKind.bothHand, TreasureKind.oneHand, TreasureKind.oneHand)));
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Felpuggoth", 2, badConsequence, prize, 5));
+        
+        badConsequence = new BadConsequence("Pierdes 2 niveles.", 2, 0, 0);
+        prize = new Prize(4,2);
+        unusedMonsters.add(new Monster("Shoggoth", 16, badConsequence, prize, -4));
+        
+        badConsequence = new BadConsequence("Pintalabios negro. Pierdes 2 niveles.", 2, 0, 0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Lolitagooth", 2, badConsequence, prize, 3));
+        
     }
     
     private void initCultistsCardDeck(){

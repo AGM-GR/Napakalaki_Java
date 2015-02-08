@@ -5,7 +5,7 @@ package NapakalakiGame;
 /**
  *
  */
-public class Treasure {
+public class Treasure implements Card{
     
     private String name = new String();
     private int goldCoins;
@@ -56,5 +56,17 @@ public class Treasure {
     public String TypetoString(){
     
         return "" + Type;
+    }
+
+    @Override
+    public int getBasicValue() {
+        
+        return getMinBonus();
+    }
+
+    @Override
+    public int getSpecialValue() {
+
+        return getMaxBonus();
     }
 }

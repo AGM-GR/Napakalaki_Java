@@ -70,6 +70,18 @@ public class Napakalaki {
         
         result = currentPlayer.combat(currentMonster);
         
+        if(result == CombatResult.LoseAndConvert){
+            
+            Cultist cultist = dealer.nextCultist();
+            
+            CultistPlayer cp = new CultistPlayer(currentPlayer, dealer.nextCultist());
+            
+            currentPlayer = cp;
+            
+            players.set(indexCurrentPlayer, currentPlayer);
+               
+        }
+        
         dealer.giveMonsterBack(currentMonster);
         
         return result;

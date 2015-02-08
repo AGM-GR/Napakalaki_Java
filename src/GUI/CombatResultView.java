@@ -37,9 +37,9 @@ public class CombatResultView extends javax.swing.JFrame {
             case LoseAndEscape: 
                 
                 cResult.setText("Has logrado escapar");
-                //icon = new ImageIcon(getClass().getResource("/Resources/LOSEANDSECAPE.gif"));
-                //icon.getImage().flush();
-                //Background.setIcon(icon);
+                icon = new ImageIcon(getClass().getResource("/Resources/LOSEANDESCAPE.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
                 break;
                 
             case LoseAndDie: 
@@ -49,13 +49,21 @@ public class CombatResultView extends javax.swing.JFrame {
                 icon.getImage().flush();
                 Background.setIcon(icon);
                 break;
+            
+            case LoseAndConvert: 
+                
+                cResult.setText("Ahora eres Sectario");
+                icon = new ImageIcon(getClass().getResource("/Resources/LOSEANDCONVERT.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
+                break;
                 
             case Win: 
                 
                 cResult.setText("Ganas el combate");
-                //icon = new ImageIcon(getClass().getResource("/Resources/WIN.gif"));
-                //icon.getImage().flush();
-                //Background.setIcon(icon);
+                icon = new ImageIcon(getClass().getResource("/Resources/WIN.gif"));
+                icon.getImage().flush();
+                Background.setIcon(icon);
                 break;
                     
             case WinAndWinGame: 
@@ -108,7 +116,7 @@ public class CombatResultView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OK);
-        OK.setBounds(200, 210, 107, 29);
+        OK.setBounds(200, 210, 107, 25);
 
         Background.setMaximumSize(new java.awt.Dimension(510, 300));
         Background.setMinimumSize(new java.awt.Dimension(510, 300));

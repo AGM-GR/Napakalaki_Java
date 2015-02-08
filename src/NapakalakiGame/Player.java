@@ -22,6 +22,16 @@ public class Player {
         level = 1;
     }
     
+    public Player(Player p){
+        
+        this.name = p.name;
+        this.dead = p.dead;
+        this.level = p.level;
+        this.pendingbadConsequence = p.pendingbadConsequence;
+        this.visibleTreasures = p.visibleTreasures;
+        this.hiddenTreasures = p.hiddenTreasures;
+    }
+    
     public String getName(){
         
         return name;
@@ -33,7 +43,7 @@ public class Player {
         
     }
     
-    public int getCombatLevel(){
+    protected int getCombatLevel(){
     
         int lvl = level;
         boolean collarVisible = false;
@@ -137,7 +147,7 @@ public class Player {
         dieIfNoTreasures();
     }
     
-    private float computeGoldCoinsValue (ArrayList<Treasure> trs){
+    protected float computeGoldCoinsValue (ArrayList<Treasure> trs){
     
         float gold = 0;
         
@@ -268,6 +278,20 @@ public class Player {
         return cont;   
     }
     
+    protected boolean shouldConvert(){
+        
+        Dice dice = Dice.getInstance();
+        
+        int number = dice.nextNumber(name + ": Has perdido.", "Tira el dado para convertirte en Sectario");
+        
+        return (number == 6);
+    }
+    
+    protected int getOpponentLevel(Monster m){
+        
+        return m.getBasicValue();
+    }
+    
     public boolean isDead(){
     
         return dead;
@@ -286,7 +310,7 @@ public class Player {
     public CombatResult combat(Monster m){
         
         int myLevel = getCombatLevel();
-        int monsterLevel = m.getCombatLevel();
+        int monsterLevel = getOpponentLevel(m);
         CombatResult result;
         
         if (myLevel > monsterLevel) {
@@ -328,13 +352,21 @@ public class Player {
                     
                     applyBadConsequence(bad);
                     
-                    result = CombatResult.Lose;
+                    if(shouldConvert())
+                        
+                        result = CombatResult.LoseAndConvert;
+                    
+                    else
+                    
+                        result = CombatResult.Lose;
+                    
                 }
             }
             
             else
                 
                 result = CombatResult.LoseAndEscape;
+            
         }
         
         discardNecklaceIfVisible();
@@ -451,6 +483,11 @@ public class Player {
         }
     }
     
+    public int getCombatLevelGUI(){
+        
+        return getCombatLevel();
+    }
+    
     public boolean hasVisibleTreasures(){
     
         return (visibleTreasures.size() > 0);
@@ -465,6 +502,11 @@ public class Player {
     public String toString(){
     
         return name + ", Nivel " + level;
+    }
+    
+    public Cultist getMyCultistCard () {
+        
+        return null;        
     }
 
 }

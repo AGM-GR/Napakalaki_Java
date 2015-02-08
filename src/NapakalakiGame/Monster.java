@@ -4,7 +4,7 @@ package NapakalakiGame;
 
 /*
  */
-public class Monster {
+public class Monster implements Card{
     
     private String name = new String();
     private int combatLevel;
@@ -58,7 +58,6 @@ public class Monster {
         return prz;
     }
     
-    
     public String toString(){
     
         return name + ", Nivel = "  + Integer.toString(combatLevel) + ", Mal rollo: " + BadCns.toString();
@@ -83,6 +82,18 @@ public class Monster {
     public int getLevelChangeAgainstCultistPlayer() {
     
         return levelChangeAgainstCultistPlayer;
+    }
+
+    @Override
+    public int getBasicValue() {
+        
+        return combatLevel;
+    }
+
+    @Override
+    public int getSpecialValue() {
+        
+        return (combatLevel + levelChangeAgainstCultistPlayer);
     }
     
 }

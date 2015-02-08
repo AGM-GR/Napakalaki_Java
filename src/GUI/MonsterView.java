@@ -35,6 +35,8 @@ public class MonsterView extends javax.swing.JPanel {
         prize = new GUI.PrizeView();
         jLabel7 = new javax.swing.JLabel();
         badConsequence = new GUI.BadConsequenceView();
+        textCultist = new javax.swing.JLabel();
+        levelCultist = new javax.swing.JLabel();
 
         jLabel6.setText("jLabel6");
 
@@ -63,6 +65,16 @@ public class MonsterView extends javax.swing.JPanel {
 
         badConsequence.setOpaque(false);
 
+        textCultist.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        textCultist.setForeground(new java.awt.Color(204, 204, 204));
+        textCultist.setText("Contra Sectarios:");
+
+        levelCultist.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        levelCultist.setForeground(new java.awt.Color(204, 204, 204));
+        levelCultist.setMaximumSize(new java.awt.Dimension(3, 13));
+        levelCultist.setMinimumSize(new java.awt.Dimension(3, 13));
+        levelCultist.setPreferredSize(new java.awt.Dimension(3, 13));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,17 +86,18 @@ public class MonsterView extends javax.swing.JPanel {
                         .addComponent(badConsequence, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(level, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel3)
+                                .addGap(42, 42, 42)
+                                .addComponent(textCultist))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(10, 10, 10)
+                                .addComponent(level, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(levelCultist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
@@ -101,9 +114,13 @@ public class MonsterView extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(textCultist))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(level)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(level)
+                            .addComponent(levelCultist, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73)
                         .addComponent(jLabel7))
                     .addGroup(layout.createSequentialGroup()
@@ -124,8 +141,10 @@ public class MonsterView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel level;
+    private javax.swing.JLabel levelCultist;
     private javax.swing.JLabel name;
     private GUI.PrizeView prize;
+    private javax.swing.JLabel textCultist;
     // End of variables declaration//GEN-END:variables
 
     public void setMonster(Monster m) {
@@ -136,6 +155,26 @@ public class MonsterView extends javax.swing.JPanel {
         level.setText(Integer.toString(monsterModel.getCombatLevel()));
         prize.setTreasure(monsterModel.getPrize());
         badConsequence.setBadConsequence(monsterModel.getBadConsequence());
+        
+        int levelC = monsterModel.getLevelChangeAgainstCultistPlayer();
+        
+        if (levelC != 0) {
+            
+            textCultist.setVisible(true);
+            
+            if (levelC > 0)
+                
+                levelCultist.setText("+" + Integer.toString(levelC));
+            else
+                
+                levelCultist.setText(Integer.toString(levelC));
+        }
+        
+        else {
+            
+            textCultist.setVisible(false);
+            levelCultist.setText("");
+        }
         
         repaint();
     }
