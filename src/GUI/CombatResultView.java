@@ -6,12 +6,12 @@
 package GUI;
 
 import NapakalakiGame.CombatResult;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class CombatResultView extends javax.swing.JFrame {
 
     CombatResult result;
+    CreditsView credview = new CreditsView();
 
     public CombatResultView() {
         
@@ -21,8 +21,10 @@ public class CombatResultView extends javax.swing.JFrame {
     public void setCombatResult(CombatResult cr) {
         
         result = cr;
-        ImageIcon icon = new ImageIcon();
+        ImageIcon icon;
         Background.setIcon(null);
+        credview.setVisible(false);
+        credits.setVisible(false);
         
         switch(result){
             
@@ -68,6 +70,7 @@ public class CombatResultView extends javax.swing.JFrame {
                     
             case WinAndWinGame: 
                 
+                credits.setVisible(true);
                 cResult.setText("Has ganado la partida");
                 icon = new ImageIcon(getClass().getResource("/Resources/WINANDWINGAME.gif"));
                 icon.getImage().flush();
@@ -95,12 +98,14 @@ public class CombatResultView extends javax.swing.JFrame {
 
         cResult = new javax.swing.JLabel();
         OK = new javax.swing.JButton();
+        credits = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Napakalaki");
         setMaximumSize(new java.awt.Dimension(510, 300));
         setMinimumSize(new java.awt.Dimension(510, 300));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         cResult.setFont(new java.awt.Font("Harrington", 3, 34)); // NOI18N
@@ -116,7 +121,16 @@ public class CombatResultView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OK);
-        OK.setBounds(200, 210, 107, 25);
+        OK.setBounds(190, 230, 110, 25);
+
+        credits.setText("Créditos");
+        credits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(credits);
+        credits.setBounds(190, 190, 110, 25);
 
         Background.setMaximumSize(new java.awt.Dimension(510, 300));
         Background.setMinimumSize(new java.awt.Dimension(510, 300));
@@ -137,9 +151,15 @@ public class CombatResultView extends javax.swing.JFrame {
             System.exit(0);
     }//GEN-LAST:event_OKActionPerformed
 
+    private void creditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsActionPerformed
+
+        credview.showView(); 
+    }//GEN-LAST:event_creditsActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton OK;
     private javax.swing.JLabel cResult;
+    private javax.swing.JButton credits;
     // End of variables declaration//GEN-END:variables
 }

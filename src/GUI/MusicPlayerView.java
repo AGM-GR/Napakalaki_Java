@@ -8,10 +8,6 @@ package GUI;
 import MusicPlayer.MusicPlayer;
 import java.util.ArrayList;
 
-/**
- *
- */
-
 public class MusicPlayerView extends javax.swing.JPanel {
     
     private MusicPlayer player = null;
