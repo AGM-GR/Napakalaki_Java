@@ -72,8 +72,6 @@ public class Napakalaki {
         
         if(result == CombatResult.LoseAndConvert){
             
-            Cultist cultist = dealer.nextCultist();
-            
             CultistPlayer cp = new CultistPlayer(currentPlayer, dealer.nextCultist());
             
             currentPlayer = cp;
