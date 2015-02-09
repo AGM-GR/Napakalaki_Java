@@ -7,6 +7,7 @@ package GUI;
 
 import NapakalakiGame.CombatResult;
 import NapakalakiGame.Napakalaki;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +18,12 @@ public class NapakalakiView extends javax.swing.JFrame {
     Napakalaki napakalakiModel;
     CombatResult result;
     CombatResultView crView = new CombatResultView();
+    ArrayList<String> canciones = new ArrayList();
+        
+    public NapakalakiView() {
+        
+        initComponents();
+    }
     
     public void setNapakalaki(Napakalaki napakalaki){
     
@@ -39,12 +46,6 @@ public class NapakalakiView extends javax.swing.JFrame {
         
         repaint();
     }
-    
-    
-    public NapakalakiView() {
-        
-        initComponents();
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,6 +63,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         combat = new javax.swing.JButton();
         monster = new GUI.MonsterView();
         error = new javax.swing.JLabel();
+        music = new GUI.MusicPlayerView();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,7 +125,9 @@ public class NapakalakiView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(GameLayout.createSequentialGroup()
-                        .addGap(210, 210, 210)
+                        .addContainerGap()
+                        .addComponent(music, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135)
                         .addComponent(meet)
                         .addGap(28, 28, 28)
                         .addComponent(combat)
@@ -142,11 +146,13 @@ public class NapakalakiView extends javax.swing.JFrame {
                     .addComponent(monster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(meet)
-                        .addComponent(combat)
-                        .addComponent(next))
-                    .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(music, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(meet)
+                            .addComponent(combat)
+                            .addComponent(next))))
                 .addGap(40, 40, 40))
         );
 
@@ -215,6 +221,11 @@ public class NapakalakiView extends javax.swing.JFrame {
         
         this.setVisible(true);
         
+        //Inicia la musica al mostrar la ventana
+        canciones.add("/Resources/Music/napaBase.mp3"); // Añade canciones
+        canciones.add("/Resources/Music/napaRock.mp3");
+        canciones.add("/Resources/Music/napaSecrets.mp3");
+        music.reproducirAudio(canciones); //Reproduce las Canciones
     }
     
     public CombatResult getCombatResult () {
@@ -229,6 +240,7 @@ public class NapakalakiView extends javax.swing.JFrame {
     private javax.swing.JLabel error;
     private javax.swing.JButton meet;
     private GUI.MonsterView monster;
+    private GUI.MusicPlayerView music;
     private javax.swing.JButton next;
     private GUI.PlayerView player;
     // End of variables declaration//GEN-END:variables

@@ -16,6 +16,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
 
     ArrayList<String> names = new ArrayList();
     int numJugador;
+    ArrayList<String> canciones = new ArrayList();
     
     
     public PlayerNamesCapture(java.awt.Frame parent, boolean modal) {
@@ -38,9 +39,12 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         
         TextPlayer.setText("Jugador " + numJugador + ":");
         
+        canciones.add("/Resources/Music/introNap.mp3"); // Añade canciones
+        music.reproducirAudio(canciones); //Reproduce las Canciones
+        
         repaint();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,6 +55,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     private void initComponents() {
 
         TextPlayer1 = new javax.swing.JLabel();
+        music = new GUI.MusicPlayerView();
         CuadroOp = new javax.swing.JPanel();
         PlayButton = new javax.swing.JButton();
         TextPlayer = new javax.swing.JLabel();
@@ -74,6 +79,8 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         TextPlayer1.setText("NAPAKALAKI");
         getContentPane().add(TextPlayer1);
         TextPlayer1.setBounds(0, 11, 900, 22);
+        getContentPane().add(music);
+        music.setBounds(20, 490, 63, 22);
 
         CuadroOp.setMaximumSize(new java.awt.Dimension(380, 168));
         CuadroOp.setMinimumSize(new java.awt.Dimension(380, 168));
@@ -168,7 +175,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     private void PlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayButtonActionPerformed
 
         this.dispose();
-
+        music.cerrarAudio();
     }//GEN-LAST:event_PlayButtonActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
@@ -252,5 +259,6 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     private javax.swing.JLabel TextPlayer1;
     private javax.swing.JButton aniade;
     private javax.swing.JLabel errorname;
+    private GUI.MusicPlayerView music;
     // End of variables declaration//GEN-END:variables
 }

@@ -85,7 +85,6 @@ public class Dice extends JDialog {
         setTitle("Dado");
         setMaximumSize(new java.awt.Dimension(400, 280));
         setMinimumSize(new java.awt.Dimension(400, 280));
-        setPreferredSize(new java.awt.Dimension(400, 280));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jL_dice.setBackground(new java.awt.Color(255, 255, 255));
