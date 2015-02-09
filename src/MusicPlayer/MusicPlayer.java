@@ -42,6 +42,7 @@ public class MusicPlayer extends Thread{
             while (Reproducir) {
                 
                 cancion = generator.nextInt(Files.size());
+                Reproductores.set(cancion, new Player(getClass().getResourceAsStream(Files.get(cancion))));
                 Reproductores.get(cancion).play();
             }
                 
